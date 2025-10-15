@@ -34,7 +34,7 @@ A robust REST API for managing events and user registrations built with Node.js,
 Run backend and PostgreSQL in a single command. No manual `npm install` required.
 
 ```bash
-git clone https://github.com/yourusername/Event_Management.git
+git clone https://github.com/Ashutosh-Shukla-036/Event_Management.git
 cd Event_Management/backend
 
 # create .env folder in Backend
@@ -55,7 +55,7 @@ docker-compose up --build
 
 ## Option 2: Manual Setup (Without Docker)
 ```bash
-git clone https://github.com/yourusername/Event_Management.git
+git clone https://github.com/Ashutosh-Shukla-036/Event_Management.git
 cd Event_Management/backend
 
 # Install dependencies
