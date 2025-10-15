@@ -1,4 +1,4 @@
-FROM node:20-alpine3.23
+FROM node:20-alpine
 
 WORKDIR /usr/src/app
 
@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+RUN npx prisma generate
+
 EXPOSE 3000
 
-CMD ["node", "src/server.js"]
+CMD sh -c "npx prisma migrate deploy && node src/server.js"
