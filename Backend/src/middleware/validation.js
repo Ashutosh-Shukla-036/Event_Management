@@ -1,6 +1,6 @@
 const sendError = (res, message) => res.status(400).json({ error: message });
 
-const validateCreateEvent = (req, res, next) => {
+export const validateCreateEvent = (req, res, next) => {
   const { title, dateTime, location, capacity } = req.body;
 
   if (!title || typeof title !== "string" || title.trim() === "")
@@ -27,7 +27,7 @@ const validateCreateEvent = (req, res, next) => {
   next();
 };
 
-const validateCreateUser = (req, res, next) => {
+export const validateCreateUser = (req, res, next) => {
   const { name, email } = req.body;
 
   if (!name || typeof name !== "string" || name.trim() === "")
@@ -43,17 +43,11 @@ const validateCreateUser = (req, res, next) => {
   next();
 };
 
-const validateRegistration = (req, res, next) => {
+export const validateRegistration = (req, res, next) => {
   const { userId } = req.body;
 
   if (!userId || (typeof userId !== "string" && typeof userId !== "number"))
     return sendError(res, "User ID must be a valid string or number");
 
   next();
-};
-
-export default {
-  validateCreateEvent,
-  validateCreateUser,
-  validateRegistration,
 };
