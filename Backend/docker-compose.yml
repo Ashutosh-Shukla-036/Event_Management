@@ -23,8 +23,10 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:password@db:5432/mydb
     volumes:
-      - .:/usr/src/app  
+      - ./src:/usr/src/app/src
+      - ./prisma:/usr/src/app/prisma
     working_dir: /usr/src/app
+    command: sh -c "npx prisma migrate deploy && node src/server.js"
 
 volumes:
   postgres_data:
